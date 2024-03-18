@@ -1,4 +1,4 @@
-function createGameBoard(){
+const theGameBoard = (function(){
     const gameBoard = [
         ["","",""],
         ["","",""],
@@ -36,10 +36,11 @@ function createGameBoard(){
         }
     }
     return {gameBoard}
-}
+})
 //TODO: displayControl
 //TODO: Player factory
 function createPlayer() {
     // Player attributes
     return { }
 }
+//TODO: Create playing grid with each cell having coordinates corresponding to gameboard array
