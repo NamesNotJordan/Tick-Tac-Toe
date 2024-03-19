@@ -1,11 +1,12 @@
+const X_mark = "X"
+const O_mark = "O"
+
+
 const theGameBoard = (function(){
-    const gameBoard = [
-        "","","",
-        "","","",
-        "","",""]
+    const gameBoard = Array(9, null)
     
-    const addToBoard = (thing) => gameBoard.push(thing)
-    //TODO: Check board for every win condition
+    const addToBoard = (thing) => {gameBoard.push(thing)}
+
     const playerWins = (symbol) => {
         //Check lines for symbol
         // Check Diagonals    
@@ -47,30 +48,38 @@ const theGameBoard = (function(){
             gameBoard[8] == symbol)) {
                 return true
         }
+        return false
     }
-    return {gameBoard}
+    return {gameBoard, playerWins, addToBoard}
 })
-//TODO: gameControl
-const gameControl = (function() {
-    player_1 = createPlayer()
-    player_2 = createPlayer()
-    
-    //TODO: Add ability to alternate between players
-    if (playerWins('x')) {
-        console.log(`${player_1.name} wins!`)
-    }
-    if (playerWins('o')) {
-        console.log(`${player_2.name} wins!`)
-    }
-    
-})
-//TODO: Player factory
+
 function createPlayer(name) {
     // Player attributes
     this.name = name
     this.score = 0
     
     const increaseScore = () => {this.score++}
-    return { name, score }
+    return { name, score, increaseScore }
 }
-//TODO: Create playing grid with each cell having coordinates corresponding to gameboard array
+
+//TODO: gameControl
+const gameControl = (function() {
+    player_1 = createPlayer()
+    player_2 = createPlayer()
+    
+    const player_mark = X_mark
+    //TODO: Add ability to alternate between players
+    const addListeners = () => {
+        for (const key in object) {
+            if (Object.hasOwnProperty.call(object, key)) {
+                const element = object[key];
+                
+            }
+        }
+    }
+    while (!playerWins(X_mark) || playerWins(O_mark)) {
+        
+    }
+    
+    
+})
