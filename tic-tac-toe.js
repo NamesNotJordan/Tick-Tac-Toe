@@ -28,7 +28,14 @@ const gameBoard = (function (){
         }
     }
 
-    return { reset, render}
+    const placeMark = (mark, index) => {
+        if (tiles[index]===""){
+            tiles[index] = mark;
+            document.querySelector(`#${index}`).innerHTML = mark;
+        }
+    } 
+
+    return { reset, render, placeMark}
 })()
 
 const displayController = (function () {
