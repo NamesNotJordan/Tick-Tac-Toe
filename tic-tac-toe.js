@@ -5,9 +5,8 @@ resetButton.addEventListener("click", () =>{
 })
 
 // #region Factories
-function createPlayer(name) {
-    this.name = name;
-    
+function createPlayer(name, mark) {
+    return { name, mark }
 }
 //#endregion
 
@@ -34,5 +33,15 @@ const gameBoard = (function (){
 
 const displayController = (function () {
 
+})()
+
+const Game = (()=> {
+    let players = [];
+    let currentPlayerIndex = 0;
+    let gameOver = false;
+    
+    const begin = () => {
+        players = [createPlayer("tom", "X"), createPlayer("dick", "O")]
+    }
 })()
 //#endregion
