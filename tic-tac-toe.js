@@ -4,13 +4,14 @@ resetButton.addEventListener("click", () =>{
     gameBoard.reset()
 })
 
-// Factories
+// #region Factories
 function createPlayer(name) {
     this.name = name
     
 }
+//#endregion
 
-// Modules
+//#region Modules
 const gameBoard = (function (){
     let tiles = Array(9).fill("")
     const reset = () => {
@@ -31,4 +32,5 @@ const gameBoard = (function (){
 
 const displayController = (function () {
 
-})
+})()
+//#endregion
